@@ -9,6 +9,8 @@ Cucumber::Rake::Task.new do |t|
   t.cucumber_opts = '--format pretty'
 end
 
+Coveralls::RakeTask.new
+
 task :rubocop do
   # sh 'rubocop -S --fail-level W'
   sh 'rubocop -S'
