@@ -1,4 +1,5 @@
 [![Travis](https://img.shields.io/travis/kisp/commerzbank-csv4gnucash.svg?maxAge=2592000)](https://travis-ci.org/kisp/commerzbank-csv4gnucash)
+[![Coverage Status](https://coveralls.io/repos/github/kisp/commerzbank-csv4gnucash/badge.svg?branch=master)](https://coveralls.io/github/kisp/commerzbank-csv4gnucash?branch=master)
 [![Gemnasium](https://img.shields.io/gemnasium/kisp/commerzbank-csv4gnucash.svg?maxAge=2592000)](https://gemnasium.com/github.com/kisp/commerzbank-csv4gnucash)
 
 # commerzbank-csv4gnucash
