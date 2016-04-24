@@ -2,6 +2,12 @@ require "commerzbank/csv4gnucash/version"
 
 module Commerzbank
   module Csv4gnucash
-    # Your code goes here...
+    def self.main(input)
+      input.readline
+      begin
+        puts input.readline
+      rescue
+      end
+    end
   end
 end

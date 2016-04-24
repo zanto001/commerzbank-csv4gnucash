@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "commerzbank/csv4gnucash"
+
+Commerzbank::Csv4gnucash.main(ARGF)

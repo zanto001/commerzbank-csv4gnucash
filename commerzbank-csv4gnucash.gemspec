@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kilian Sprotte"]
   spec.email         = ["kilian.sprotte@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Tweak CSV exports from commerzbank for importing into GnuCash.}
+  spec.homepage      = "https://github.com/kisp/commerzbank-csv4gnucash"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -30,4 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "cucumber", "~> 2.3"
+  spec.add_development_dependency "aruba", "~> 0.14"
 end
