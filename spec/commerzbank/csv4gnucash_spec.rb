@@ -6,6 +6,6 @@ describe Commerzbank::Csv4gnucash do
   end
 
   it 'does something useful' do
-    expect(2+2).to eq(4)
+    expect(2 + 2).to eq(4)
   end
 end
