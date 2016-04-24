@@ -6,7 +6,7 @@ module Commerzbank
       input.readline
       begin
         puts input.readline
-      # rescue
+      rescue
       end
     end
   end
