@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/kisp/commerzbank-csv4gnucash.svg?maxAge=2592000)]()
+[![Travis](https://img.shields.io/travis/kisp/commerzbank-csv4gnucash.svg?maxAge=2592000)](https://travis-ci.org/kisp/commerzbank-csv4gnucash)
 
 # commerzbank-csv4gnucash
 Tweak CSV exports from commerzbank for importing into GnuCash.
