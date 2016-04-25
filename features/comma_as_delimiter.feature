@@ -8,4 +8,4 @@ Feature: Comma as delimiter
     """
     When I successfully run `commerzbank-csv4gnucash f.csv`
     Then the output should not contain ";"
-    Then the output should contain ","
+    But the output should contain ","
