@@ -5,7 +5,7 @@ Feature: Currency format
   So that GnuCash will important them without tweaking settings in the
   import wizard
   
-  Scenario Outline: small positive integer
+  Scenario Outline: header and one line of data
     Given a file named "f.csv" with:
     """
     Buchungstag;Wertstellung;Umsatzart;Buchungstext;Betrag;Währung;Auftraggeberkonto;Bankleitzahl Auftraggeberkonto;IBAN Auftraggeberkonto
