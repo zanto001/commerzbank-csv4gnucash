@@ -3,5 +3,5 @@ Then(/^column (\d+) in row (\d+) should be "([^"]*)"$/
   output = all_commands[-1].stdout
   data = CSV.parse(output)
   field = data[row.to_i - 1][column.to_i - 1]
-  expect(field).to eq(expected)
+  expect(field || '').to eq(expected)
 end
