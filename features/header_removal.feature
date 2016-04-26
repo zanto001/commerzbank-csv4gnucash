@@ -1,10 +1,10 @@
 Feature: Header removal
-  
+
   As a user
   I want that headers are removed
   So that the resulting CSV file complies to GnuCash's
   requirement of being headerless
-  
+
   Scenario: header and one line of data
     Given a file named "f.csv" with:
     """

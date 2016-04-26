@@ -1,9 +1,9 @@
 Feature: Account should be set to a constant
-  
+
   As a user
   I want that account is set to a constant
   So that GnuCash matches the bank account for all transactions automatically
-  
+
   Scenario: header and one line of data
     Given a file named "f.csv" with:
     """

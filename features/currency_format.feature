@@ -1,10 +1,10 @@
 Feature: Currency format
-  
+
   As a user
   I want currencies to be displayed with period
   So that GnuCash will important them without tweaking settings in the
   import wizard
-  
+
   Scenario Outline: header and one line of data
     Given a file named "f.csv" with:
     """

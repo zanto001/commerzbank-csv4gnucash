@@ -1,9 +1,9 @@
 Feature: Comma as delimiter
-  
+
     As a user
     I want to receive CSV data with comma as delimiter
     So that I do not have to change the settings in the GnuCash import wizard
-  
+
     Scenario: header and one line of data
     Given a file named "f.csv" with:
     """
