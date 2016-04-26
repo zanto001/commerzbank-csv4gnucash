@@ -3,6 +3,21 @@ require 'csv'
 require 'date'
 require 'pp'
 
+# Wrap a given stream and normalize line endings.
+# Works for LF and CRLF line endings.
+class LineEndingNormalizer
+  def initialize(wrapped)
+    @wrapped = wrapped
+  end
+
+  def gets(arg)
+    raise "Expected #{"\n".inspect} but got #{arg.inspect}" unless arg == '\\n'
+    line = @wrapped.gets
+    line = line.chomp if line
+    line
+  end
+end
+
 CSV::Converters[:foo] =
   lambda do |f|
     if f =~ /^\d{1,2}\.\d{1,2}\.\d{4}$/
@@ -39,6 +54,22 @@ end
 module Commerzbank
   # Csv4gnucash adopts Commerzbank CSV for GnuCash
   module Csv4gnucash
+    def self.with_csv_output(output)
+      CSV(output) { |csv| yield csv }
+    end
+
+    def self.with_csv_input(input)
+      CSV.new(LineEndingNormalizer.new(input),
+              col_sep: ';',
+              row_sep: '\n',
+              headers: true,
+              header_converters: :symbol,
+              converters: [:foo, :bar]
+             ).each do |row|
+        yield row
+      end
+    end
+
     def self.convert(row)
       conv = []
       conv << row[:buchungstag]
@@ -52,14 +83,9 @@ module Commerzbank
       conv
     end
 
-    def self.main(_input)
-      CSV($stdout) do |out|
-        CSV.new(ARGF,
-                col_sep: ';',
-                headers: true,
-                header_converters: :symbol,
-                converters: [:foo, :bar]
-               ).each do |row|
+    def self.main(input)
+      with_csv_output($stdout) do |out|
+        with_csv_input(input) do |row|
           out << convert(row)
         end
       end
