@@ -54,6 +54,7 @@ Feature: Currency format
       | in           |          out |
       | 10000,13     |     10000.13 |
       | 123456789,13 | 123456789.13 |
+      | 1.300,55     |      1300.55 |
 
     Examples: small negative float
       | in     |    out |

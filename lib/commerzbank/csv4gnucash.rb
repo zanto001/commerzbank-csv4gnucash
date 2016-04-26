@@ -31,7 +31,7 @@ CSV::Converters[:bar] =
   lambda do |f|
     if f =~ /^-?[\d,.]+$/
       # TODO: avoid floats
-      f.tr(',', '.').to_f
+      f.tr('.', '').tr(',', '.').to_f
     else
       f
     end
