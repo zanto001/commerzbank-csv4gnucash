@@ -64,8 +64,7 @@ module Commerzbank
               row_sep: '\n',
               headers: true,
               header_converters: :symbol,
-              converters: [:foo, :bar]
-             ).each do |row|
+              converters: [:foo, :bar]).each do |row|
         yield row
       end
     end
