@@ -9,8 +9,7 @@ Cucumber::Rake::Task.new do |t|
 end
 
 task :rubocop do
-  # sh 'rubocop -S --fail-level W'
-  sh 'rubocop -S'
+  sh 'bundle exec rubocop'
 end
 
 desc 'Run tests, both RSpec and Cucumber'
