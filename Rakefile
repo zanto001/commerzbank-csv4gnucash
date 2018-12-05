@@ -13,6 +13,6 @@ task :rubocop do
 end
 
 desc 'Run tests, both RSpec and Cucumber'
-task test: [:rubocop, :spec, :cucumber]
+task test: %i[rubocop spec cucumber]
 
 task default: :test

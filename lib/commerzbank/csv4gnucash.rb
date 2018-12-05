@@ -12,6 +12,7 @@ class LineEndingNormalizer
 
   def gets(arg)
     raise "Expected #{"\n".inspect} but got #{arg.inspect}" unless arg == '\\n'
+
     line = @wrapped.gets
     line = line.chomp if line
     line
@@ -64,16 +65,19 @@ module Commerzbank
               row_sep: '\n',
               headers: true,
               header_converters: :symbol,
-              converters: [:foo, :bar]).each do |row|
+              converters: %i[foo bar]).each do |row|
         yield row
       end
     end
 
+    # rubocop:disable Metrics/MethodLength
     def self.convert(row)
       conv = []
       conv << row[:buchungstag]
       conv << nil
-      conv << format('%s [%s]', row[:buchungstext], row[:umsatzart])
+      conv << format('%<buchungstext>s [%<umsatzart>s]',
+                     buchungstext: row[:buchungstext],
+                     umsatzart: row[:umsatzart])
       conv << nil
       conv << 'Commerzbank'
       conv << row[:betrag]
@@ -81,6 +85,7 @@ module Commerzbank
       conv << nil
       conv
     end
+    # rubocop:enable Metrics/MethodLength
 
     def self.main(input)
       with_csv_output($stdout) do |out|
